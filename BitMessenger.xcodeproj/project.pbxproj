@@ -10,6 +10,9 @@
 		4300117F24F7094F004A5596 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4300117E24F7094F004A5596 /* NavView.swift */; };
 		4300118124F70F80004A5596 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4300118024F70F80004A5596 /* MessagesView.swift */; };
 		4300118424F70FCA004A5596 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4300118324F70FCA004A5596 /* ProfileView.swift */; };
+		431B079C24F71190001D23E0 /* FindUsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B079B24F71190001D23E0 /* FindUsersView.swift */; };
+		431B079F24F711DD001D23E0 /* SetUpAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B079E24F711DD001D23E0 /* SetUpAccount.swift */; };
+		431B07A124F71445001D23E0 /* UserDataExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431B07A024F71445001D23E0 /* UserDataExists.swift */; };
 		4388AE5B24D394AD00A7EC11 /* BitMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388AE5A24D394AD00A7EC11 /* BitMessengerApp.swift */; };
 		4388AE5D24D394AD00A7EC11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388AE5C24D394AD00A7EC11 /* ContentView.swift */; };
 		4388AE5F24D394AE00A7EC11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4388AE5E24D394AE00A7EC11 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		4300117E24F7094F004A5596 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
 		4300118024F70F80004A5596 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		4300118324F70FCA004A5596 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		431B079B24F71190001D23E0 /* FindUsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindUsersView.swift; sourceTree = "<group>"; };
+		431B079E24F711DD001D23E0 /* SetUpAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpAccount.swift; sourceTree = "<group>"; };
+		431B07A024F71445001D23E0 /* UserDataExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataExists.swift; sourceTree = "<group>"; };
 		4388AE5724D394AD00A7EC11 /* BitMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4388AE5A24D394AD00A7EC11 /* BitMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMessengerApp.swift; sourceTree = "<group>"; };
 		4388AE5C24D394AD00A7EC11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 		4300118524F70FD5004A5596 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				431B07A024F71445001D23E0 /* UserDataExists.swift */,
 				4388AE5A24D394AD00A7EC11 /* BitMessengerApp.swift */,
 				4300117E24F7094F004A5596 /* NavView.swift */,
 				4388AE5C24D394AD00A7EC11 /* ContentView.swift */,
@@ -80,6 +87,15 @@
 				4388AE6924D3962200A7EC11 /* SessionStore.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		431B079D24F7119C001D23E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				431B079B24F71190001D23E0 /* FindUsersView.swift */,
+				431B079E24F711DD001D23E0 /* SetUpAccount.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4388AE4E24D394AD00A7EC11 = {
@@ -103,6 +119,7 @@
 		4388AE5924D394AD00A7EC11 /* BitMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				431B079D24F7119C001D23E0 /* Views */,
 				4300118224F70F92004A5596 /* Tab Screens */,
 				4300118524F70FD5004A5596 /* Core */,
 				431B079A24F7102E001D23E0 /* Firebase */,
@@ -256,10 +273,13 @@
 				4300118424F70FCA004A5596 /* ProfileView.swift in Sources */,
 				4388AE5D24D394AD00A7EC11 /* ContentView.swift in Sources */,
 				4388AE5B24D394AD00A7EC11 /* BitMessengerApp.swift in Sources */,
+				431B079F24F711DD001D23E0 /* SetUpAccount.swift in Sources */,
 				4388AE6C24D3968F00A7EC11 /* AuthView.swift in Sources */,
 				4388AE7024D3997300A7EC11 /* HomeView.swift in Sources */,
 				4300118124F70F80004A5596 /* MessagesView.swift in Sources */,
 				4300117F24F7094F004A5596 /* NavView.swift in Sources */,
+				431B07A124F71445001D23E0 /* UserDataExists.swift in Sources */,
+				431B079C24F71190001D23E0 /* FindUsersView.swift in Sources */,
 				4388AE6A24D3962200A7EC11 /* SessionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

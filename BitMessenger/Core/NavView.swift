@@ -17,12 +17,12 @@ struct NavView: View {
                     Text("Home")
                 }.tag(0)
             
-            HomeView()
+            MessagesView()
                 .tabItem {
                     Image(systemName: "message")
                     Text("Messages")
                 }.tag(1)
-            HomeView()
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")
