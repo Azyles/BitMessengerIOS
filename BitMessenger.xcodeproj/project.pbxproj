@@ -3,23 +3,41 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4300117F24F7094F004A5596 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4300117E24F7094F004A5596 /* NavView.swift */; };
+		4300118124F70F80004A5596 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4300118024F70F80004A5596 /* MessagesView.swift */; };
+		4300118424F70FCA004A5596 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4300118324F70FCA004A5596 /* ProfileView.swift */; };
 		4388AE5B24D394AD00A7EC11 /* BitMessengerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388AE5A24D394AD00A7EC11 /* BitMessengerApp.swift */; };
 		4388AE5D24D394AD00A7EC11 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388AE5C24D394AD00A7EC11 /* ContentView.swift */; };
 		4388AE5F24D394AE00A7EC11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4388AE5E24D394AE00A7EC11 /* Assets.xcassets */; };
 		4388AE6224D394AE00A7EC11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4388AE6124D394AE00A7EC11 /* Preview Assets.xcassets */; };
+		4388AE6A24D3962200A7EC11 /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388AE6924D3962200A7EC11 /* SessionStore.swift */; };
+		4388AE6C24D3968F00A7EC11 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388AE6B24D3968F00A7EC11 /* AuthView.swift */; };
+		4388AE6E24D3991300A7EC11 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4388AE6D24D3991300A7EC11 /* GoogleService-Info.plist */; };
+		4388AE7024D3997300A7EC11 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388AE6F24D3997300A7EC11 /* HomeView.swift */; };
+		C6104CE1D0D106DAC2FFFC64 /* Pods_BitMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7144E7CCAEA0447D5C73BDB /* Pods_BitMessenger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4300117E24F7094F004A5596 /* NavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		4300118024F70F80004A5596 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		4300118324F70FCA004A5596 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4388AE5724D394AD00A7EC11 /* BitMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4388AE5A24D394AD00A7EC11 /* BitMessengerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMessengerApp.swift; sourceTree = "<group>"; };
 		4388AE5C24D394AD00A7EC11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4388AE5E24D394AE00A7EC11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4388AE6124D394AE00A7EC11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4388AE6324D394AE00A7EC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4388AE6924D3962200A7EC11 /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SessionStore.swift; path = "../New Group/SessionStore.swift"; sourceTree = "<group>"; };
+		4388AE6B24D3968F00A7EC11 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		4388AE6D24D3991300A7EC11 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4388AE6F24D3997300A7EC11 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		6A994E2EAEE89BAF7B0B20C2 /* Pods-BitMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitMessenger.debug.xcconfig"; path = "Target Support Files/Pods-BitMessenger/Pods-BitMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		984C425DB746DC91D9C5B615 /* Pods-BitMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitMessenger.release.xcconfig"; path = "Target Support Files/Pods-BitMessenger/Pods-BitMessenger.release.xcconfig"; sourceTree = "<group>"; };
+		A7144E7CCAEA0447D5C73BDB /* Pods_BitMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +45,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6104CE1D0D106DAC2FFFC64 /* Pods_BitMessenger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4300118224F70F92004A5596 /* Tab Screens */ = {
+			isa = PBXGroup;
+			children = (
+				4388AE6F24D3997300A7EC11 /* HomeView.swift */,
+				4300118024F70F80004A5596 /* MessagesView.swift */,
+				4300118324F70FCA004A5596 /* ProfileView.swift */,
+			);
+			name = "Tab Screens";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		4300118524F70FD5004A5596 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4388AE5A24D394AD00A7EC11 /* BitMessengerApp.swift */,
+				4300117E24F7094F004A5596 /* NavView.swift */,
+				4388AE5C24D394AD00A7EC11 /* ContentView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		431B079A24F7102E001D23E0 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				4388AE6B24D3968F00A7EC11 /* AuthView.swift */,
+				4388AE6924D3962200A7EC11 /* SessionStore.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		4388AE4E24D394AD00A7EC11 = {
 			isa = PBXGroup;
 			children = (
 				4388AE5924D394AD00A7EC11 /* BitMessenger */,
 				4388AE5824D394AD00A7EC11 /* Products */,
+				F2DFDDDE760F209F49F02622 /* Pods */,
+				96E804FBC53C2B86B933A1B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,10 +103,12 @@
 		4388AE5924D394AD00A7EC11 /* BitMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				4388AE5A24D394AD00A7EC11 /* BitMessengerApp.swift */,
-				4388AE5C24D394AD00A7EC11 /* ContentView.swift */,
+				4300118224F70F92004A5596 /* Tab Screens */,
+				4300118524F70FD5004A5596 /* Core */,
+				431B079A24F7102E001D23E0 /* Firebase */,
 				4388AE5E24D394AE00A7EC11 /* Assets.xcassets */,
 				4388AE6324D394AE00A7EC11 /* Info.plist */,
+				4388AE6D24D3991300A7EC11 /* GoogleService-Info.plist */,
 				4388AE6024D394AE00A7EC11 /* Preview Content */,
 			);
 			path = BitMessenger;
@@ -69,6 +122,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		96E804FBC53C2B86B933A1B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7144E7CCAEA0447D5C73BDB /* Pods_BitMessenger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2DFDDDE760F209F49F02622 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A994E2EAEE89BAF7B0B20C2 /* Pods-BitMessenger.debug.xcconfig */,
+				984C425DB746DC91D9C5B615 /* Pods-BitMessenger.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -76,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4388AE6624D394AE00A7EC11 /* Build configuration list for PBXNativeTarget "BitMessenger" */;
 			buildPhases = (
+				605F97E13F43FAE10D33738F /* [CP] Check Pods Manifest.lock */,
 				4388AE5324D394AD00A7EC11 /* Sources */,
 				4388AE5424D394AD00A7EC11 /* Frameworks */,
 				4388AE5524D394AD00A7EC11 /* Resources */,
+				67DAD74726BF44510698D696 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,19 +199,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				4388AE6224D394AE00A7EC11 /* Preview Assets.xcassets in Resources */,
+				4388AE6E24D3991300A7EC11 /* GoogleService-Info.plist in Resources */,
 				4388AE5F24D394AE00A7EC11 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		605F97E13F43FAE10D33738F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BitMessenger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67DAD74726BF44510698D696 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitMessenger/Pods-BitMessenger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitMessenger/Pods-BitMessenger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BitMessenger/Pods-BitMessenger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4388AE5324D394AD00A7EC11 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4300118424F70FCA004A5596 /* ProfileView.swift in Sources */,
 				4388AE5D24D394AD00A7EC11 /* ContentView.swift in Sources */,
 				4388AE5B24D394AD00A7EC11 /* BitMessengerApp.swift in Sources */,
+				4388AE6C24D3968F00A7EC11 /* AuthView.swift in Sources */,
+				4388AE7024D3997300A7EC11 /* HomeView.swift in Sources */,
+				4300118124F70F80004A5596 /* MessagesView.swift in Sources */,
+				4300117F24F7094F004A5596 /* NavView.swift in Sources */,
+				4388AE6A24D3962200A7EC11 /* SessionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +385,7 @@
 		};
 		4388AE6724D394AE00A7EC11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A994E2EAEE89BAF7B0B20C2 /* Pods-BitMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -286,6 +408,7 @@
 		};
 		4388AE6824D394AE00A7EC11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 984C425DB746DC91D9C5B615 /* Pods-BitMessenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
