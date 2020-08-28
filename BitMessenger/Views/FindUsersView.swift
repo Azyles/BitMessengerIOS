@@ -7,14 +7,36 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAuth
 import Foundation
 
 struct FindUsersView: View {
+    let user = Auth.auth().currentUser
+    @State private var showingAlert = false
     @ObservedObject var viewModel = BooksViewModel()
     @Environment(\.colorScheme) var colorScheme
     private var db = Firestore.firestore()
+    func addToGroup(othermemberid: String){
+        self.showingAlert = true
+        let postDictionaryUser: [String: Any] = [
+            "groupName": "Private Group",
+            "members": [user?.uid, othermemberid],
+        ]
+        
+        let docRefUser = Firestore.firestore()
+            .collection("Group")
+            .document()
+        
+        docRefUser.setData(postDictionaryUser, merge: true){ (error) in
+            if let error = error {
+                print("error = \(error)")
+            } else {
+                print("Joined Group")
+            }
+        }
+        
+    }
     var body: some View {
-        GeometryReader { geometry in
             VStack{
                 Text("Find Users")
                     .font(.title)
@@ -26,7 +48,9 @@ struct FindUsersView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(colorScheme == .dark ? Color(red: 35/255.0, green: 35/255.0, blue: 35/255.0, opacity: 1.0):Color(red: 220/255.0, green: 220/255.0, blue: 220/255.0, opacity: 1.0) )
                         TextField(" UserName", text: $viewModel.searchText).padding(.horizontal, 13.0).textFieldStyle(PlainTextFieldStyle())
-                    }.frame(width: geometry.size.width*0.8, height: geometry.size.height*0.07)
+                    }.frame(height: 50)
+                    
+                    .padding(.horizontal, 25.0)
                     Spacer()
                 }
                 .padding(.top)
@@ -48,19 +72,32 @@ struct FindUsersView: View {
                                 Spacer()
                             }
                             .padding(.leading, 15.0)
-                        }.frame(width: geometry.size.width*0.8, height: geometry.size.height*0.08)
+                        }
+                        .padding(.horizontal, 25.0)
+                        .frame(height: 62)
+                        
+                        .onTapGesture(count: 1) {
+                            addToGroup(othermemberid: book.id)
+                        }
+                        .alert(isPresented: $showingAlert) {
+                            Alert(
+                                title: Text("Say Hi!"),
+                                message: Text("... has been added to your message list"),
+                                dismissButton: .default(Text("Confirm"))
+                            )
+                        }
                         
                         Spacer()
                     }
                     .padding(.top, 15.0)
                 }.onAppear() { // (3)
                     self.viewModel.fetchData()
-                  }
+                }
                 Spacer()
             }
-        }
     }
 }
+
 
 struct ActivityCard: Identifiable {
     var id: String
@@ -70,32 +107,32 @@ struct ActivityCard: Identifiable {
 }
 
 class BooksViewModel: ObservableObject {
-  @Published var books = [ActivityCard]()
+    @Published var books = [ActivityCard]()
     @Published var searchText: String = "" {
-            didSet {
-                fetchData()
-            }
+        didSet {
+            fetchData()
         }
-  
-  private var db = Firestore.firestore()
-  
+    }
+    
+    private var db = Firestore.firestore()
+    
     func fetchData() {
         db.collection("UserData").whereField("customID", isEqualTo: searchText).addSnapshotListener { (querySnapshot, error) in
-        guard let documents = querySnapshot?.documents else {
-          print("No documents")
-          return
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            self.books = documents.map { queryDocumentSnapshot -> ActivityCard in
+                let data = queryDocumentSnapshot.data()
+                let id = data["userUID"] as? String ?? ""
+                let fullName = data["fullName"] as? String ?? ""
+                let userName = data["userName"] as? String ?? ""
+                let customID = data["customID"] as? String ?? ""
+                
+                return ActivityCard(id: id, fullName: fullName, userName: userName, customID: customID)
+            }
         }
-
-        self.books = documents.map { queryDocumentSnapshot -> ActivityCard in
-          let data = queryDocumentSnapshot.data()
-          let id = data["userUID"] as? String ?? ""
-          let fullName = data["fullName"] as? String ?? ""
-          let userName = data["userName"] as? String ?? ""
-          let customID = data["customID"] as? String ?? ""
-
-          return ActivityCard(id: id, fullName: fullName, userName: userName, customID: customID)
-        }
-      }
     }
 }
 
