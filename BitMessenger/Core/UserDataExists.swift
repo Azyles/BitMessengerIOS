@@ -10,41 +10,36 @@ import FirebaseAuth
 import FirebaseFirestore
 
 struct UserDataExists: View {
+    @State var accountStatus: Bool = true
+    let user = Auth.auth().currentUser
+    let db = Firestore.firestore()
     
-       let user = Auth.auth().currentUser
-       let db = Firestore.firestore()
-       
-       @State var session: Bool = false
-       
-       func confrim() -> Bool {
-           
-           let docRef = db.collection("UserData").document(user?.uid ?? "None")
-           
-           docRef.getDocument { (document, error) in
-               if let document = document {
-                   if document.exists{
-                       print("True")
-                       self.session = true
-                   } else {
-                       print("False")
-                       self.session = false
-                   }
-               }
-           }
-           return session
-       }
-       
-       var body: some View {
-           Group {
-               if (confrim() == true) {
-                   NavView()
-               } else {
-                   SetUpAccount()
-               }
-           }
-       }
-   }
-
+    func confirm() -> Bool {
+        let docRef = db.collection("UserData").document(user?.uid ?? "None")
+     
+        docRef.getDocument { (document, error) in
+            if let document = document {
+                if document.exists{
+                    print("True")
+                    self.accountStatus = true
+                } else {
+                    print("False")
+                    self.accountStatus = false
+                }
+            }
+        }
+        return accountStatus
+    }
+    var body: some View {
+        Group {
+            if (confirm() == true) {
+                NavView()
+            } else {
+                SetUpAccount()
+            }
+        }
+    }
+}
 
 struct UserDataExists_Previews: PreviewProvider {
     static var previews: some View {

@@ -17,7 +17,7 @@ struct NavView: View {
                     Text("Home")
                 }.tag(0)
             
-            MessagesView()
+            FindUsersView()
                 .tabItem {
                     Image(systemName: "message")
                     Text("Messages")

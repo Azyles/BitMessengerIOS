@@ -62,6 +62,32 @@ struct User {
     }
 }
 
+class AccountDataStore: ObservableObject {
+    var didChange = PassthroughSubject<AccountDataStore, Never>()
+    
+    @Published var accountStatus: String? {didSet{self.didChange.send(self)}}
+    
+       let user = Auth.auth().currentUser
+       let db = Firestore.firestore()
+       
+       func confrim() {
+           let docRef = db.collection("UserData").document(user?.uid ?? "None")
+        
+           docRef.getDocument { (document, error) in
+               if let document = document {
+                   if document.exists{
+                       print("True")
+                       self.accountStatus = "Exists"
+                   } else {
+                       print("False")
+                       self.accountStatus = nil
+                   }
+               }
+           }
+       }
+}
+
+
 struct SessionStore_Previews: PreviewProvider {
     static var previews: some View {
         /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
