@@ -91,23 +91,26 @@ struct ProfileView: View {
                 }
                 .padding(.top, 15.0)
                 
-                HStack {
-                    Spacer()
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(colorScheme == .dark ? Color(red: 30/255.0, green: 30/255.0, blue: 30/255.0, opacity: 1.0):Color(red: 235/255.0, green: 235/255.0, blue: 235/255.0, opacity: 1.0) )
-                        HStack {
-                            Text("Friends")
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            Spacer()
-                        }
-                        .padding(.leading, 15.0)
-                    }.frame(width: geometry.size.width*0.8, height: geometry.size.height*0.08)
+                NavigationLink(destination: FindUsersView()) {
                     
-                    Spacer()
+                    HStack {
+                        Spacer()
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(colorScheme == .dark ? Color(red: 30/255.0, green: 30/255.0, blue: 30/255.0, opacity: 1.0):Color(red: 235/255.0, green: 235/255.0, blue: 235/255.0, opacity: 1.0) )
+                            HStack {
+                                Text("Friends")
+                                    .font(.headline)
+                                    .fontWeight(.bold)
+                                Spacer()
+                            }
+                            .padding(.leading, 15.0)
+                        }.frame(width: geometry.size.width*0.8, height: geometry.size.height*0.08)
+                        
+                        Spacer()
+                    }
+                    .padding(5.0)
                 }
-                .padding(5.0)
                 Spacer()
             }
         }

@@ -18,14 +18,16 @@ struct FindUsersView: View {
     private var db = Firestore.firestore()
     func addToGroup(othermemberid: String){
         self.showingAlert = true
+        var randomID = UUID()
         let postDictionaryUser: [String: Any] = [
             "groupName": "Private Group",
+            "groupID": "\(randomID)",
             "members": [user?.uid, othermemberid],
         ]
         
         let docRefUser = Firestore.firestore()
             .collection("Group")
-            .document()
+            .document("\(randomID)")
         
         docRefUser.setData(postDictionaryUser, merge: true){ (error) in
             if let error = error {
