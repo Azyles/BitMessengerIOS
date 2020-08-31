@@ -22,7 +22,7 @@ struct NavView: View {
                     Image(systemName: "message")
                     Text("Messages")
                 }.tag(1)
-            FindUsersView()
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("Profile")

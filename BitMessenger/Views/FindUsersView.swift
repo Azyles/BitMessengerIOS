@@ -40,10 +40,6 @@ struct FindUsersView: View {
     }
     var body: some View {
             VStack{
-                Text("Find Users")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.top, 15.0)
                 HStack {
                     Spacer()
                     ZStack{
@@ -95,8 +91,9 @@ struct FindUsersView: View {
                 }.onAppear() { // (3)
                     self.viewModel.fetchData()
                 }
+                .listStyle(PlainListStyle())
                 Spacer()
-            }
+            }.navigationBarTitle(Text("Find Users"),displayMode: .inline)
     }
 }
 

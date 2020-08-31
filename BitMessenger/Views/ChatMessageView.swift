@@ -66,24 +66,65 @@ struct ChatMessageView: View {
     }
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        VStack{
-            Button(action: sendMessage) {
-                Text("Sumbit")
-            }.padding(.top)
+        GeometryReader{ geo in
             ZStack{
-                List(texts.text){ text in
-                    Text(text.content)
-                }.onAppear {
-                    texts.fetchChatData(documentIID: chat.id)
+                VStack {
+                    List(texts.text){ text in
+                        if text.senderID == user?.uid{
+                            HStack{
+                                Spacer()
+                                VStack(alignment: .leading){
+                                    Group {
+                                        Text(text.senderName)
+                                            .fontWeight(.bold)
+                                            .padding(.bottom, 5.0)
+                                        Text(text.content)
+                                    }
+                                }.padding(.all)
+                                .background(Color(red: 0.95, green: 0.3, blue: 0.25, opacity: 1))
+                                .cornerRadius(10)
+                                .frame(minWidth: geo.size.width*0.6, idealWidth:geo.size.width*0.6, maxWidth: geo.size.width*0.6,alignment: .trailing)
+                                
+                            }
+                        }else{
+                            HStack{
+                                VStack(alignment: .leading){
+                                    Group {
+                                        Text(text.senderName)
+                                            .fontWeight(.bold)
+                                            .padding(.bottom, 5.0)
+                                        Text(text.content)
+                                    }
+                                }.padding(.all)
+                                .background(Color.gray.opacity(0.3))
+                                .cornerRadius(10)
+                                .frame(minWidth: geo.size.width*0.6, idealWidth:geo.size.width*0.6, maxWidth: geo.size.width*0.6,alignment: .leading)
+                                Spacer()
+                            }
+                        }
+                    }.onAppear {
+                        texts.fetchChatData(documentIID: chat.id)
+                    }
+                    .listStyle(PlainListStyle())
+                    Spacer()
                 }
                 VStack {
                     Spacer()
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(colorScheme == .dark ? Color(red: 35/255.0, green: 35/255.0, blue: 35/255.0, opacity: 1.0):Color(red: 220/255.0, green: 220/255.0, blue: 220/255.0, opacity: 1.0) )
-                        TextField(" Message", text: $usermessage).padding(.horizontal, 13.0).textFieldStyle(PlainTextFieldStyle())
+                            .padding(.trailing, 76.0)
+                        HStack {
+                            TextField(" Message", text: $usermessage).padding(.horizontal, 13.0).textFieldStyle(PlainTextFieldStyle())
+                            Button(action: sendMessage) {
+                                ZStack{
+                                    Circle().foregroundColor(.orange)
+                                    Image(systemName: "plus")
+                                }.frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding(.trailing, 13.0)
+                            }
+                        }
                     }.frame(height: 50)
-                    .padding(.horizontal, 25.0)
+                    .padding(.leading, 25.0)
                 }
                 .padding(.bottom)
             }

@@ -54,54 +54,35 @@ struct ProfileView: View {
     
     @Environment(\.colorScheme) var colorScheme
     var body: some View {
-        GeometryReader { geometry in
-            VStack{
-                Text(name())
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.top, 15.0)
-                HStack {
-                    Image("Clarkson")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: geometry.size.width*0.35, height: geometry.size.width*0.35)
-                        .clipShape(Circle())
-                }
-                .padding(.vertical, 15.0)
+        NavigationView {
+            GeometryReader { geometry in
+                VStack{
+                    Text(name())
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.top, 15.0)
+                    HStack {
+                        Image("Clarkson")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: geometry.size.width*0.35, height: geometry.size.width*0.35)
+                            .clipShape(Circle())
+                    }
+                    .padding(.vertical, 15.0)
 
-                HStack {
-                    Spacer()
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(colorScheme == .dark ? Color(red: 30/255.0, green: 30/255.0, blue: 30/255.0, opacity: 1.0):Color(red: 235/255.0, green: 235/255.0, blue: 235/255.0, opacity: 1.0) )
-                        HStack {
-                            Text(fullName())
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            Text(usercustomID())
-                                .font(.subheadline)
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.gray)
-                            Spacer()
-                        }
-                        .padding(.leading, 15.0)
-                    }.frame(width: geometry.size.width*0.8, height: geometry.size.height*0.08)
-                    
-                    Spacer()
-                }
-                .padding(.top, 15.0)
-                
-                NavigationLink(destination: FindUsersView()) {
-                    
                     HStack {
                         Spacer()
                         ZStack{
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(colorScheme == .dark ? Color(red: 30/255.0, green: 30/255.0, blue: 30/255.0, opacity: 1.0):Color(red: 235/255.0, green: 235/255.0, blue: 235/255.0, opacity: 1.0) )
                             HStack {
-                                Text("Friends")
+                                Text(fullName())
                                     .font(.headline)
                                     .fontWeight(.bold)
+                                Text(usercustomID())
+                                    .font(.subheadline)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.gray)
                                 Spacer()
                             }
                             .padding(.leading, 15.0)
@@ -109,11 +90,33 @@ struct ProfileView: View {
                         
                         Spacer()
                     }
-                    .padding(5.0)
+                    .padding(.top, 15.0)
+                    
+                    NavigationLink(destination: FindUsersView()) {
+                        
+                        HStack {
+                            Spacer()
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(colorScheme == .dark ? Color(red: 30/255.0, green: 30/255.0, blue: 30/255.0, opacity: 1.0):Color(red: 235/255.0, green: 235/255.0, blue: 235/255.0, opacity: 1.0) )
+                                HStack {
+                                    Text("Friends")
+                                        .font(.headline)
+                                        .fontWeight(.bold)
+                                    Spacer()
+                                }
+                                .padding(.leading, 15.0)
+                            }.frame(width: geometry.size.width*0.8, height: geometry.size.height*0.08)
+                            
+                            Spacer()
+                        }
+                        .padding(5.0)
+                    }
+                    Spacer()
                 }
-                Spacer()
             }
-        }
+        }.navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 

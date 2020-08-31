@@ -23,11 +23,11 @@ struct MessagesView: View {
                         Text(chat.groupName)
                             .font(.headline)
                             .fontWeight(.bold)
-                            .foregroundColor(Color.white)
                     }
                 }.padding(.top, 5.0).onAppear() { // (3)
                     self.messageGroup.fetchChatData()
                 }
+                .listStyle(PlainListStyle())
                 Spacer()
             }.navigationBarHidden(true)
         }
