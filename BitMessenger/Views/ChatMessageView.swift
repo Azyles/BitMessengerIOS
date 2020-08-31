@@ -106,6 +106,7 @@ struct ChatMessageView: View {
                         texts.fetchChatData(documentIID: chat.id)
                     }
                     .listStyle(PlainListStyle())
+                    .padding(.bottom, 60.0)
                     Spacer()
                 }
                 VStack {
