@@ -1,2 +1,3 @@
 # BitMessengerIOS
-basic messaging app made with swiftUI
+
+A basic messaging app made with swiftUI. Find users by searching for the userID. **WORK IN PROGRESS**
